@@ -2,17 +2,17 @@ use std::io::Write;
 use std::str::FromStr;
 
 /*
-    fn is a function declaration
-    gcd is the function name
-    mut means this parameter or variable is mutatable. Otherwise it's a constant by default.
-    n and m are variable names
-    u64 are the types
-    -> u64 means the return type of the function
- */
+   fn is a function declaration
+   gcd is the function name
+   mut means this parameter or variable is mutatable. Otherwise it's a constant by default.
+   n and m are variable names
+   u64 are the types
+   -> u64 means the return type of the function
+*/
 
 fn gcd(mut n: u64, mut m: u64) -> u64 {
     assert!(n != 0 && m != 0); // This checks these values and if not, it blows and 'panics'
-    // Convention is to leave out the (). But it will still work.
+                               // Convention is to leave out the (). But it will still work.
     while m != 0 {
         if m < n {
             let t = m;
@@ -24,6 +24,7 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
 
     // equivalent to `return n;` ONLY if you LEAVE OUT THE ;
     // This is the general convention in Rust.
+    // return n;
     n
 }
 
@@ -45,10 +46,7 @@ fn main() {
     // *arg would get the value by dereferencing arg and reading it
     // Chapter 4 covers it in more details
     for arg in std::env::args().skip(1) {
-        numbers.push(
-            u64::from_str(&arg)
-            .unwrap()
-        )
+        numbers.push(u64::from_str(&arg).unwrap())
     }
 
     if numbers.len() == 0 {
