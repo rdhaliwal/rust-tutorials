@@ -24,6 +24,7 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
 
     // equivalent to `return n;` ONLY if you LEAVE OUT THE ;
     // This is the general convention in Rust.
+    // return n;
     n
 }
 

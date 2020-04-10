@@ -11,27 +11,12 @@ jobs:
     - name: Build
       run: cargo build --verbose
       working-directory: ./chapter_2
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
     - name: Run tests
       run: cargo test --verbose
       working-directory: ./chapter_2
-
-  lint:
-    name: Lint Checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v1
-
-      - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
-          components: rustfmt
-
-      - name: Run cargo fmt
-        uses: actions-rs/cargo@v1
-        with:
-          command: fmt
-          args: --all -- --check
