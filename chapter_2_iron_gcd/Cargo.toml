@@ -1,0 +1,11 @@
+[package]
+name = "chapter_2_iron_gcd"
+version = "0.1.0"
+authors = ["Randeep Dhaliwal <dhaliwal.randeep.s@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+iron = "0.6.1"
+mime = "0.2.3"
+router = "0.6.0"
+urlencoded = "0.6.0"
