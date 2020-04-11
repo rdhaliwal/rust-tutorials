@@ -3,20 +3,22 @@ name: Chapter 2
 on: [push]
 
 jobs:
-  build:
-    name: Build
+  chapter_2:
+    name: "Chapter 2 GCD"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Build
       run: cargo build --verbose
       working-directory: ./chapter_2
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
     - name: Run tests
       run: cargo test --verbose
       working-directory: ./chapter_2
+  chapter_2_iron_gcd:
+    name: "Chapter 2 Web Server"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: cargo build --verbose
+      working-directory: ./chapter_2_iron_gcd
